@@ -1,8 +1,8 @@
 
 public class Link {
 
-	String colorName;
-	public Link next;
+	String colorName;	//Fields for data,
+	public Link next;	//and previous/next links(nodes)
 	public Link previous;
 	
 	public Link(String color)
