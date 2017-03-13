@@ -13,7 +13,7 @@ public class DoublyLinkedList {
 	
 	
 	public boolean isEmpty(){
-		return head == null;
+		return head == null;	//returns false if head is null
 	}
 	
 	public void main(String[] args) //Main Method
