@@ -1,5 +1,5 @@
 
-public class Link {
+public class Link { //Class to for Links (Nodes)
 
 	String colorName;	//Fields for data,
 	public Link next;	//and previous/next links(nodes)
