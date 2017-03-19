@@ -22,7 +22,18 @@ public class DoublyLinkedList {
 			head.previous = newLink;					//takes old head (start) and sets previous
 			head = newLink;								//to the new start we just made
 		}
+		size++;
 	}
+	public int size();
+	{
+		return size;
+	}
+	public void printList();{
+		Link current = head;
+		while(current != null){
+			System.out.println(current);
+			current = current.next;
+		}
 	
 	public boolean isEmpty(){
 		return head == null;	//returns true if head is null
@@ -30,7 +41,10 @@ public class DoublyLinkedList {
 	
 	public void main(String[] args) //Main Method
 	{
-		
+		DoublyLinkedList test = new DoublyLinkedList();
+		test.addStart("Blue");
+		test.addStart("Green");
+		test.printList();
 	}
 	}
 	
