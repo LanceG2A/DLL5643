@@ -6,15 +6,15 @@ public class Link { //Class to for Links (Nodes)
 	public Link previous;
 	
 	public Link(String color) //Constructor initialializes link
-	{
+	{							//
 		previous = null;
 		this.colorName = color;
 		next = null;
 	}
-	public Link(Link previous, Link next, String colorName) { //Sets previous and next pointers
-		this.previous = previous;
-		this.next = next;
+	public Link(Link previous, String colorName, Link next) { 
+		this.previous = previous;  //
 		this.colorName = colorName;
+		this.next = next;	
 	}
 	
 	public String ReturnColor() {  //Return link information
