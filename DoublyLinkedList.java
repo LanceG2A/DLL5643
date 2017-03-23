@@ -88,13 +88,19 @@ public class DoublyLinkedList {
 	}
 	public void printListForward(){
 		Link current = head;
-		while(current != null){
-			System.out.println(current.colorName);
-			current = current.next;
+		if(current != null){
+			while(current != null){
+				System.out.println(current.colorName);
+				current = current.next;
+		}
+		}
+		else{
+			System.out.println("Empty List");
 		}
 	}
 	public void printListBackward(){
 		Link current = head;
+		if(current != null){
 		while(current.next != null){
 			current = current.next;
 		}
@@ -102,6 +108,10 @@ public class DoublyLinkedList {
 		while(current.previous != null){
 			System.out.println(current.previous.colorName);
 			current = current.previous;
+		}
+		}
+		else{
+			System.out.println("Empty List");
 		}
 	}
 	
@@ -123,11 +133,28 @@ public class DoublyLinkedList {
 	}
 	public String find(String color){
 		Link temp = head;
-		while(temp.colorName != color){
-			temp = temp.next;
+		if(temp != null){
+			while(temp.colorName != color){
+				temp = temp.next;
+			}
+			return temp.colorName;
+		}
+		else{
+			return "Link does not exist";
 		}
 		
-		return temp.colorName;
+		
+	}
+	public void destroyList(){
+		Link temp = head;
+		while(temp != null){
+			head = null;
+			Link temp2 = temp;
+			temp = temp.next;
+			temp2.previous = null;
+			temp2.next = null;
+			temp2 = null;
+		}
 	}
 }
 	

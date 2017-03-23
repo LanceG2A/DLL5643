@@ -44,6 +44,15 @@ public static void main(String[] args) //Main Method
 	
 	System.out.println(test2.find("Blue"));
 	
+	System.out.println("\nNow destroying the second list and trying to print it forwards and backwards: ");
+	test2.destroyList();
+	test2.printListForward();
+	test2.printListBackward();
+	
+	System.out.println("\nNow trying to find the Links containing Blue, Red, and Orange");
+	System.out.println(test2.find("Blue"));
+	System.out.println(test2.find("Red"));
+	System.out.println(test2.find("Orange"));
 	
 }
 }
