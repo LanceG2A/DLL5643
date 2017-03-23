@@ -1,10 +1,10 @@
 
 public class DoublyLinkedList {
 
-	private Link head;
-	private int size;
+	private Link head; //field to store the first Link
+	private int size;  //field to hold the size of the list
 	
-	public DoublyLinkedList(){
+	public DoublyLinkedList(){  //Base constructor to create an empty list
 		head = null;
 		size = 0;
 	}
@@ -24,25 +24,25 @@ public class DoublyLinkedList {
 		size++;
 	}
 	
-	public void addAlphabetical(String color){ //works now
+	public void addAlphabetical(String color){ //Method to add Links in alphabetical order
 		if(head == null){
-			head = new Link(null, color, null);
+			head = new Link(null, color, null); //If the list is empty the Link added is the first
 		}
 		else{
-		Link temp = head;
-			if(temp.next == null){
+		Link temp = head;		
+			if(temp.next == null){  //checks to see if there is only one item in the list and compares
 				if(color.compareTo(temp.colorName) > 0){
 					Link newLink = new Link(head, color, null);
 					head.next = newLink;
-		}
-				else {
+		}					//The if else statement is used to determine where the second Link will go
+				else {		//It will either be the new head or the next Link in the list
 					Link newLink = new Link(null, color, head);
 					head.previous = newLink;
 					head = newLink;
 		}
 		}
-			else{
-				int i = 0;
+			else{		//Now if there is more than one Link in the list, we iteratively check until
+				int i = 0;	// we find the location that the Link needs to go
 				while(i == 0){
 					if(color.compareTo(temp.colorName) > 0){					
 						if(temp.next != null){
@@ -86,7 +86,7 @@ public class DoublyLinkedList {
 	{
 		return size;
 	}
-	public void printListForward(){
+	public void printListForward(){//iterates through the list and prints each Link
 		Link current = head;
 		if(current != null){
 			while(current != null){
@@ -98,7 +98,7 @@ public class DoublyLinkedList {
 			System.out.println("Empty List");
 		}
 	}
-	public void printListBackward(){
+	public void printListBackward(){//iterates forward through the list, then prints from back to front
 		Link current = head;
 		if(current != null){
 		while(current.next != null){
